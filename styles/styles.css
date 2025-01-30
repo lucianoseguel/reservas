@@ -1,0 +1,12 @@
+#clientes li {
+    display: grid;
+    grid-template-columns: 10% 10% 10% 10% 10% 10%;
+    gap: 10%;
+    border: 1px solid black;
+    text-align: center;
+}
+
+
+.varchar{
+    color: blue;
+}

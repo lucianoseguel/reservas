@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+<form action="https://formsubmit.co/lucianitoseguel@gmail.com"  id="fomrulario" method="POST">
+    <label for="name">Nombre</label><br>
+    <input id="name" type="text" placeholder="Nombre" name="nombre"><br>
+    <label for="Fecha">fecha</label><br>
+    <input id="date" type="date" name="fecha"><br>
+    <label for="hour">Hora</label><br>
+    <input id="time" type="time" name="hora"><br>
+    <label for="phone">Phone</label><br>
+    <input id="phone" type="number" name="phone"  placeholder="+54 9 ...">
+   
+    <input type="hidden" name="_captcha" value="false">
+    
+    <button id="databaseup" type="submit">Reservar</button>
+</form>
+
+<ul id="clientes">
+
+</ul>
+
+
+
+    <script type="module" src="index.js"></script>
+<!-- ========== Start Section ========== --
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+ ========== End Section ========== -->
+    
+
+
+</body>
+</html>

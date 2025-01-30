@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "@supabase/supabase-js": "^2.48.1",
+    "firebase": "^10.14.1",
+    "supabase": "^2.6.8"
+  },
+  "name": "consultas-de-sql-en-la-nube",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "��#\u0000 \u0000r\u0000e\u0000s\u0000e\u0000r\u0000v\u0000a\u0000s\u0000\r\u0000 \u0000",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucianoseguel/reservas.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lucianoseguel/reservas/issues"
+  },
+  "homepage": "https://github.com/lucianoseguel/reservas#readme"
+}
