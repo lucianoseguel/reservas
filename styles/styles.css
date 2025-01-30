@@ -10,3 +10,19 @@
 .varchar{
     color: blue;
 }
+
+
+main{
+    max-width: 80vw;
+    margin: auto;
+    justify-content: center;
+}
+
+
+.delete:hover{
+    cursor: pointer;
+}
+
+td{
+text-align: center;
+}

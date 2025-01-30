@@ -4,9 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://flowbite.com/docs/flowbite.css?v=2.5.2a">
     <link rel="stylesheet" href="styles/styles.css">
+
+
 </head>
 <body>
+
+    <main>
 <form action="https://formsubmit.co/lucianitoseguel@gmail.com"  id="fomrulario" method="POST">
     <label for="name">Nombre</label><br>
     <input id="name" type="text" placeholder="Nombre" name="nombre"><br>
@@ -22,12 +29,34 @@
     <button id="databaseup" type="submit">Reservar</button>
 </form>
 
-<ul id="clientes">
+<ul >
 
 </ul>
 
 
 
+
+<div class="overflow-x-auto">
+    <table class="min-w-full divide-y-2 divide-gray-200 bg-white text-sm">
+      <thead class="ltr:text-left rtl:text-right">
+        <tr>
+          <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">Nombre</th>
+          <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">Fecha de reserva</th>
+          <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">Hora</th>
+          <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">Telefono</th>
+          <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">Pagado / Seña</th>
+          <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">Acción</th>
+          <th class="px-4 py-2"></th>
+        </tr>
+      </thead>
+  
+      <tbody class="divide-y divide-gray-200" id="clientes"></tbody>
+
+    </table>
+  </div>
+
+
+</main>
     <script type="module" src="index.js"></script>
 <!-- ========== Start Section ========== --
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>

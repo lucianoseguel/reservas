@@ -5,7 +5,6 @@ import { getAnalytics } from 'https://www.gstatic.com/firebasejs/10.9.0/firebase
 import { getAuth } from 'https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js';
 
 
-
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
     apiKey: "AIzaSyBjZYpyz-o1paUSxMOcbdsGc9LcSLrKc4Q",
@@ -28,6 +27,8 @@ const auth = getAuth(app);
 
 
 console.log("Conexión a Firebase establecida correctamente.");
+
+// ! Importar librerias de FIRESTORE (FIREBASE)
 
 import { doc, setDoc, addDoc, collection, getDocs, deleteDoc  } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore.js"; 
 
@@ -98,29 +99,44 @@ querySnapshot.forEach((doc) => {
   // doc.data() is never undefined for query doc snapshots
   console.log(doc.id, " => ", doc.data());
 
-  let li= document.createElement("li")//* Crea el Elemento Lista
+  let tr = document.createElement("tr")//* Crea el Elemento Lista
+  tr.className = ""
 
-  let name = document.createElement('p') //Crea el p de nombre o x elemento para leer en firebase
+  let name = document.createElement('td') //Crea la celda de nombre o x elemento para leer en firebase
   name.textContent = `${doc.data().nombre}` //escribe lo que dice firebase dentro del elemento
+  name.className = 'whitespace-nowrap px-4 py-2 font-medium text-gray-800'
 
-
-  let fecha = document.createElement('p')
+  let fecha = document.createElement('td')
   fecha.textContent = `${doc.data().dia}`
+  fecha.className = "whitespace-nowrap px-4 py-2 text-gray-700"
 
 
-  let hora = document.createElement('p')
+  let hora = document.createElement('td')
   hora.textContent = `${doc.data().hora}`
+  hora.className = "whitespace-nowrap px-4 py-2 text-gray-700"
 
 
-  let seña = document.createElement('p')
+  let seña = document.createElement('td')
  seña.textContent = `${doc.data().seña}`
+ seña.className = "whitespace-nowrap px-4 py-2 text-gray-700"
 
 
-  let telefono = document.createElement('p')
+  let telefono = document.createElement('td')
  telefono.textContent = `${doc.data().telefono}`
+ telefono.className = "whitespace-nowrap px-4 py-2 text-gray-700"
 
- let deleteador = document.createElement("button")// !Boton para borrar reservas en la base de datos
- deleteador.textContent = "Borrar"
+// *Boton para borrar reservas en la base de datos
+ let deleteador = document.createElement("td")
+ let deleteador_a = document.createElement("button")// crea el a para redirigir o algo
+
+  deleteador_a.textContent = "Borrar" 
+
+  deleteador.className = "whitespace-nowrap px-4 py-2 delete"
+  deleteador_a.className = "inline-block rounded bg-indigo-600 px-4 py-2 text-xs font-medium text-white hover:bg-indigo-700"
+
+  deleteador.appendChild(deleteador_a)
+
+
 
  deleteador.addEventListener("click", async function () { // Listener para boton x
 
@@ -134,18 +150,16 @@ querySnapshot.forEach((doc) => {
   })
 
 
-li.appendChild(name) //* Agrega al li del html 
-li.appendChild(fecha)
-li.appendChild(hora)
-li.appendChild(telefono)
-li.appendChild(seña)
+    tr.appendChild(name) //* Agrega al tr del html 
+    tr.appendChild(fecha)
+    tr.appendChild(hora)
+    tr.appendChild(telefono)
+    tr.appendChild(seña)
+    tr.appendChild(deleteador)
 
+    clientes.appendChild(tr) //* Agrega al tbody del html 
 
-li.appendChild(deleteador)
-
-clientes.appendChild(li) //* Agrega al ul del html 
-
-console.log(li)
+    console.log(tr)
 });
 
 
