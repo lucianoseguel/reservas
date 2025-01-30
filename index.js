@@ -102,7 +102,7 @@ querySnapshot.forEach((doc) => {
   let tr = document.createElement("tr")//* Crea el Elemento Lista
   tr.className = ""
 
-  let name = document.createElement('td') //Crea el p de nombre o x elemento para leer en firebase
+  let name = document.createElement('td') //Crea la celda de nombre o x elemento para leer en firebase
   name.textContent = `${doc.data().nombre}` //escribe lo que dice firebase dentro del elemento
   name.className = 'whitespace-nowrap px-4 py-2 font-medium text-gray-800'
 
