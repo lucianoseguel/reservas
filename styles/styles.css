@@ -13,9 +13,9 @@
 
 
 main{
-    max-width: 80vw;
-    margin: auto;
-    justify-content: center;
+    
+    
+    display: flex;
 }
 
 
