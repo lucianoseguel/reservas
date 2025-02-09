@@ -6,8 +6,10 @@ import { getAuth } from 'https://www.gstatic.com/firebasejs/10.9.0/firebase-auth
 
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+let key = process.env.APIKEY
+
 const firebaseConfig = {
-    apiKey: "AIzaSyBjZYpyz-o1paUSxMOcbdsGc9LcSLrKc4Q",
+    apiKey: key,
     authDomain: "reservas-restaurante-ce2f3.firebaseapp.com",
     projectId: "reservas-restaurante-ce2f3",
     storageBucket: "reservas-restaurante-ce2f3.firebasestorage.app",
@@ -26,12 +28,12 @@ const analytics = getAnalytics(app);
 const auth = getAuth(app);
 
 
+
 console.log("Conexión a Firebase establecida correctamente.");
 
 // ! Importar librerias de FIRESTORE (FIREBASE)
 
-import { doc, setDoc, addDoc, collection, getDocs, deleteDoc  } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore.js"; 
-
+import { doc, setDoc, addDoc, collection, getDocs, deleteDoc, query, orderBy, limit, where } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore.js"; 
 
 
 //* Add a new document in collection "reservas"
@@ -43,7 +45,19 @@ nombre.addEventListener("input", function() {
 })
 
 let dia = document.getElementById("date");
+const today = new Date();
+const yyyy = today.getFullYear();
+const mm = String(today.getMonth() + 1).padStart(2, '0');
+const dd = String(today.getDate()).padStart(2, '0');
+
+// Establecemos la fecha mínima permitida en el input tipo "date"
+dia.min = `${yyyy}-${mm}-${dd}`;
+
+
+
 dia.addEventListener("input", function() {
+
+
   console.log(dia.value)
   
   })
@@ -94,7 +108,7 @@ databaseup.addEventListener("click", async function (){
 
 let clientes = document.querySelector("#clientes") // Ul del html
 
-const querySnapshot = await getDocs(collection(db, table));
+const querySnapshot = await getDocs(query(collection(db, table), orderBy("dia", "asc"), where("dia", ">=", dia.min ))); //Aca van los filtros y parametros 
 querySnapshot.forEach((doc) => {
   // doc.data() is never undefined for query doc snapshots
   console.log(doc.id, " => ", doc.data());
