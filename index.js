@@ -9,7 +9,7 @@ import { getAuth } from 'https://www.gstatic.com/firebasejs/10.9.0/firebase-auth
 let key = process.env.APIKEY
 
 const firebaseConfig = {
-    apiKey: "AIzaSyBjZYpyz-o1paUSxMOcbdsGc9LcSLrKc4Q",
+    apiKey: key,
     authDomain: "reservas-restaurante-ce2f3.firebaseapp.com",
     projectId: "reservas-restaurante-ce2f3",
     storageBucket: "reservas-restaurante-ce2f3.firebasestorage.app",
