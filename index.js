@@ -6,6 +6,8 @@ import { getAuth } from 'https://www.gstatic.com/firebasejs/10.9.0/firebase-auth
 
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+let key = process.env.APIKEY
+
 const firebaseConfig = {
     apiKey: "AIzaSyBjZYpyz-o1paUSxMOcbdsGc9LcSLrKc4Q",
     authDomain: "reservas-restaurante-ce2f3.firebaseapp.com",
