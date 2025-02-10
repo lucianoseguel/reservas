@@ -17,7 +17,7 @@ fetch('api/clave') // La ruta debe ser /api/clave
   .then(data => {
     clave = data.clave;
     console.log(clave); // Usa la clave
-
+    return clave
   })
   .catch(error => {
     console.error('Error al obtener la clave:', error); // Maneja los errores
