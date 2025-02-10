@@ -5,7 +5,7 @@ import { getAnalytics } from 'https://www.gstatic.com/firebasejs/10.9.0/firebase
 import { getAuth } from 'https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js';
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const key = process.env.VERCEL_ENV
+const key = process.env.APIKEY;
 
 const firebaseConfig = {
     apiKey: key,
