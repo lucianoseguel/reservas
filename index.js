@@ -14,7 +14,6 @@ async function obtenerClave() {
     }
     const data = await response.json();
     clave = data.clave;
-    console.log(clave); // Usa la clave aquí
     return clave; // Devuelve la clave si la necesitas en otro lugar
   } catch (error) {
     console.error('Error al obtener la clave:', error);
@@ -24,7 +23,7 @@ async function obtenerClave() {
 
 async function usarClave() {
   const clave = await obtenerClave();
-  console.log("Clave (usando async/await):", clave);
+  console.log("Clave obtenda con exito")
   return clave
   // Usa la clave para otras acciones
 }
