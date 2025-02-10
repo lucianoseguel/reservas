@@ -5,7 +5,7 @@ import { getAnalytics } from 'https://www.gstatic.com/firebasejs/10.9.0/firebase
 import { getAuth } from 'https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js';
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 
-const clave = 0
+let clave
 
 fetch('api/clave') // La ruta debe ser /api/clave
   .then(response => {
@@ -28,7 +28,7 @@ fetch('api/clave') // La ruta debe ser /api/clave
   
 
 const firebaseConfig = {
-    apiKey: key,
+    apiKey: clave,
     authDomain: "reservas-restaurante-ce2f3.firebaseapp.com",
     projectId: "reservas-restaurante-ce2f3",
     storageBucket: "reservas-restaurante-ce2f3.firebasestorage.app",
