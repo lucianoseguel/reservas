@@ -4,9 +4,13 @@ import { getStorage } from 'https://www.gstatic.com/firebasejs/10.9.0/firebase-s
 import { getAnalytics } from 'https://www.gstatic.com/firebasejs/10.9.0/firebase-analytics.js';
 import { getAuth } from 'https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js';
 
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const key = "AIzaSyBjZYpyz-o1paUSxMOcbdsGc9LcSLrKc4Q";
+
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const key = process.env.APIKEY;
+
 
 const firebaseConfig = {
     apiKey: key,
