@@ -21,14 +21,9 @@ async function obtenerClave() {
   }
 }
 
-async function usarClave() {
-  const clave = await obtenerClave();
-  console.log("Clave obtenda con exito")
-  return clave
-  // Usa la clave para otras acciones
-}
 
-let key = await usarClave()
+
+let key = await obtenerClave()
 
 console.log(key)
 
