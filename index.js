@@ -37,7 +37,7 @@ console.log(key)
   
 
 const firebaseConfig = {
-    apiKey: clave,
+    apiKey: key,
     authDomain: "reservas-restaurante-ce2f3.firebaseapp.com",
     projectId: "reservas-restaurante-ce2f3",
     storageBucket: "reservas-restaurante-ce2f3.firebasestorage.app",
