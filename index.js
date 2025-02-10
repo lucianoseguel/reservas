@@ -5,6 +5,8 @@ import { getAnalytics } from 'https://www.gstatic.com/firebasejs/10.9.0/firebase
 import { getAuth } from 'https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js';
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 
+const clave = 0
+
 fetch('api/clave') // La ruta debe ser /api/clave
   .then(response => {
     if (!response.ok) { // Verifica si la respuesta es exitosa
@@ -13,8 +15,9 @@ fetch('api/clave') // La ruta debe ser /api/clave
     return response.json(); // Parsea la respuesta como JSON
   })
   .then(data => {
-    const clave = data.clave;
+    clave = data.clave;
     console.log(clave); // Usa la clave
+
   })
   .catch(error => {
     console.error('Error al obtener la clave:', error); // Maneja los errores
