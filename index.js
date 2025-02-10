@@ -19,9 +19,11 @@ fetch('api/clave') // La ruta debe ser /api/clave
   .catch(error => {
     console.error('Error al obtener la clave:', error); // Maneja los errores
   });
-  
 
-const key = process.env.APIKEY;
+  
+  console.log(clave); // Usa la clave
+
+  
 
 const firebaseConfig = {
     apiKey: key,
