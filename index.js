@@ -27,10 +27,9 @@ async function usarClave() {
   console.log("Clave (usando async/await):", clave);
   // Usa la clave para otras acciones
 }
-
+console.log(obtenerClave())
 usarClave();
 
- console.log(clave); // Usa la clave
 
 
   
